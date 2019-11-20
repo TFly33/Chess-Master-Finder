@@ -9,20 +9,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         type="text/css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
-    <h1 class="container chessTrivia text-center border text-white bg-secondary"> <i class="fas fa-chess-queen"></i> Chessmaster Matcher <i class="fas fa-chess-queen"></i></h1>
+    <h1 class="container chessTrivia text-center border text-white bg-secondary"> <i class="fas fa-chess-queen"></i>
+        Chessmaster Matcher <i class="fas fa-chess-queen"></i></h1>
     <!-- Let's create a space for our start button.  -->
     <br>
     <div class="container largecontainer text-white bg-secondary">
         <div class="row">
             <div class="startText text-center  border-dark startDiv">
-                Answer a few basic questions about your chess style to determine your best match.
+                <h4>
+                    Answer a few basic questions about your chess style to <br> determine your best match.</h4>
             </div>
 
 
@@ -30,145 +32,6 @@
                 <button type="button" class="btn btn-lg btn-success start text-center"> Go to survey </button>
             </div>
 
-
-            <div class="timeRemaining text-center"> </div>
-
-            <div id="hidden" class="questions results hide">
-                <div class="container card-body border-btm border-dark form-check" id="form1">
-                    <div>
-                        How many squares are on a chess board?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName1" value="false" id="radio1a"> 50
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName1" value="true" id="radio1b"> 64
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName1" value="false" id="radio1c"> 49
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName1" value="false" id="radio1d"> 81
-                        </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark form-check" id="form2">
-                    <div>
-                        Which combination describes how pawns move?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName2" value="true"> Initially, pawns
-                            can
-                            move one or two squares, and can capture opposing pieces diagonally </label>
-                        <label class="radio-inline"><input type="radio" name="radioName2" value="false"> Initially,
-                            pawns
-                            can
-                            only
-                            move one square,
-                            and can capture opposing pieces diagonally </label>
-                        <label class="radio-inline"><input type="radio" name="radioName2" value="false"> Initially,
-                            pawns
-                            must
-                            move
-                            two squares, and
-                            capture diagonally </label>
-                        <label class="radio-inline"><input type="radio" name="radioName2" value="false"> Initially,
-                            pawns
-                            can
-                            move
-                            one or two
-                            squares, and can capture vertically and horizontally </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form3">
-                    <div>
-                        Who is the only American to hold the title of World Chess Champion?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName3" value="false"> Anatoly Karpov
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName3" value="false"> Garry Kasparov
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName3" value="false"> Paul Morphy
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName3" value="true"> Bobby Fischer
-                        </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form4">
-                    <div>
-                        In terms of movement, the queen is combination of which two pieces?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName4" value="false"> knight, rook
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName4" value="true"> rook, bishop
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName4" value="false"> bishop, knight
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName4" value="false"> rook, king
-                        </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form5">
-                    <div>
-                        Widely considered the greatest chess player of all time, this player is known as "The Beast from
-                        Baku"?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName5" value="true"> Garry Kasparov
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName5" value="false"> Anatoly Karpov
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName5" value="false"> Mikhail Tal
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName5" value="false"> Paul Morphy
-                        </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form6">
-                    <div>
-                        Historians generally agree that chess originated in?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName6" value="false"> Eastern Russia
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName6" value="false"> England
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName6" value="false"> Ethiopia
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName6" value="true"> India, before
-                            spreading
-                            to Persia </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form7">
-                    <div>
-                        In chess half the square are light and half are dark. Which piece can never change from light to
-                        dark or
-                        dark to light?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName7" value="false"> Queen </label>
-                        <label class="radio-inline"><input type="radio" name="radioName7" value="false"> Pawn </label>
-                        <label class="radio-inline"><input type="radio" name="radioName7" value="true"> Bishop </label>
-                        <label class="radio-inline"><input type="radio" name="radioName7" value="false"> Rook </label>
-                    </div>
-                </div>
-                <div class="container card-body border border-dark" id="form8">
-                    <div>
-                        Studies have shown playing chess can improve?
-                        <br>
-                        <label class="radio-inline"><input type="radio" name="radioName8" value="false"> Reading skills
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName8" value="false"> Memory </label>
-                        <label class="radio-inline"><input type="radio" name="radioName8" value="false"> Problem solving
-                            skills
-                        </label>
-                        <label class="radio-inline"><input type="radio" name="radioName8" value="true"> All of the
-                            above</label>
-                    </div>
-                </div>
-                <br>
-                <!-- Adding a "Done" Button -->
-                <div class="container text-center">
-                    <button type="button" class="btn doneButton btn-lg btn-success"> Done!
-                    </button>
-                </div>
-            </div>
-            <div class="container text-center">
-                <div class="resultsDiv"> </div>
-            </div>
         </div>
     </div>
 
