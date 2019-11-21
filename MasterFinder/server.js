@@ -1,9 +1,10 @@
 
-// We'll knock out our requirements here. The solved hot rest. puts the path require in the htmlRoute.js fole, so keep that in mind if we run into a weird error while building this. 
-
+// We'll knock out our requirements here. 
 var express = require("express");
-var app = express();
 var path = require("path");
+// We mainly just need the path file in the routes.js file. 
+
+var app = express();
 
 // initial port. 
 var PORT = process.env.PORT || 8080;
@@ -12,9 +13,9 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// I'm pretty sure I need these. They point to express as well, and refer to the npm install package that the app will need to run. 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//  They point to express as well, and refer to the npm install package that the app will need to run. 
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
 // And we need a way to start our server. 
