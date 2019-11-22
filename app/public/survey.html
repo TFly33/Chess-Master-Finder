@@ -214,25 +214,30 @@
             var currentURL = window.location.origin;
 
             $.post(currentURL + "/api/friends", newChessmasters)
-            .then(function (data) {
+                .then(function (data) {
+                    if (data) {
+                        // remember to get rid of this alert at some point!
+                        alert("adding new Chess Master");
 
-                // remember to get rid of this alert at some point!
-                alert("adding new Chess Master");
+                        // And we can clear, even though an image will be popping up. 
+                        $("#name").val("");
+                        $("#link").val("");
+                        $("#ques1").val("");
+                        $("#ques2").val("");
+                        $("#ques3").val("");
+                        $("#ques4").val("");
+                        $("#ques5").val("");
+                        $("#ques6").val("");
+                        $("#ques7").val("");
+                        $("#ques8").val("");
+                        $("#ques9").val("");
+                        $("#ques10").val("");
+                    }
+                    else {
+                        console.log("There's been an error")
+                    }
+            });
 
-                    // And we can clear, even though an image will be popping up. 
-                    $("#name").val("");
-                    $("#link").val("");
-                    $("#ques1").val("");
-                    $("#ques2").val("");
-                    $("#ques3").val("");
-                    $("#ques4").val("");
-                    $("#ques5").val("");
-                    $("#ques6").val("");
-                    $("#ques7").val("");
-                    $("#ques8").val("");
-                    $("#ques9").val("");
-                    $("#ques10").val("");
-                })
         });
     </script>
 </body>
