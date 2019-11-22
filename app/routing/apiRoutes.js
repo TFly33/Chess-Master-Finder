@@ -19,7 +19,7 @@ module.exports = function (app) {
         var newChessMasters = req.body;
         var totalDifference;
         for (var i = 0; i < Chessmasters.length; i++) {
-            console.log("This is the overall loop")
+            // console.log("This is the overall loop")
             var singleFriend = Chessmasters[i]
             // console.log(Chessmasters[i].scores[i])
             totalDifference = 0
@@ -28,13 +28,19 @@ module.exports = function (app) {
 
                 var existingMasterScore = parseInt(singleFriend.scores[i]);
                 var newMasterScore = parseInt(newChessMasters.scores[j]);
-                console.log("We're in the loop")
-                console.log(singleFriend.scores[i])
-                console.log(newChessMasters.scores[j]);
+                // console.log("We're in the loop")
+                // console.log(singleFriend.scores[i])
+                // console.log(newChessMasters.scores[j]);
 
-                totalDifference += Math.abs(existingMasterScore - newMasterScore)
-                console.log("this is total diff:" + totalDifference)
-                // Now we need an inner loop comparing the array of the incoming submission. 
+                // This will be the variable we use for the total difference between the incoming array and each existing array. 
+                var finalDifference = totalDifference += Math.abs(existingMasterScore - newMasterScore)
+                // console.log("this is total diff:" + totalDifference)
+               
+                var newArray = [];
+                newArray.push(finalDifference);
+                console.log("------------------");
+                newArray.sort(function(a,b) {return a-b});
+                console.log(res.json(newArray.body.body[0]))
             }
 
         }
