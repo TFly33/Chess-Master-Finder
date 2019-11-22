@@ -23,4 +23,3 @@ module.exports = function (app) {
 
 };
 
-// should I add a friends page?
