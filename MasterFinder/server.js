@@ -2,10 +2,15 @@
 // We'll knock out our requirements here. 
 var express = require("express");
 var path = require("path");
+var request = require("request")
 // We mainly just need the path file in the routes.js file. 
 
 var app = express();
 
+app.use((req, res, next)  => {
+res.header("Access-Control-Allow-Origin","*");
+next();
+}); 
 // initial port. 
 var PORT = process.env.PORT || 8080;
 
