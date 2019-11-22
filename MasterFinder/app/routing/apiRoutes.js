@@ -1,7 +1,7 @@
 
 
 
-var newChessMaster = require("../data/friends")
+var newChessmaster = require("../data/friends")
 
 
 // GET ROUTE at /api/friends  USE THIS TO DISPLAY A JSON OF ALL POSSIBLE FRIENDS. THIS WILL GET LINKED IN THE BOTTOM LEFT OF THE HOME PAGE 
