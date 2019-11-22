@@ -191,7 +191,7 @@
             event.preventDefault();
 
             // NEED TO GRAB THE USER INPUT
-            var newChessmaster = {
+            var newChessmasters = {
                 name: $("#name").val().trim(),
                 photo: $("#link").val().trim(),
                 scores: [
@@ -207,24 +207,32 @@
                     $(".ques10").val().trim(),
                 ]
             };
-            console.log(newChessmaster);
-            console.log(newChessmaster.scores[1]);
-            console.log(newChessmaster.scores[9]);
+            console.log(newChessmasters);
+            console.log(newChessmasters.scores[1]);
+            console.log(newChessmasters.scores[9]);
 
-            $.post("/api/friends", newChessmaster, function (data) {
-                if (data) {
-                    console.log("That worked");
-                    // match();
-                    console.log(newChessmaster)
-                }
+            var currentURL = window.location.origin;
 
-                else {
-                    alert(
-                        "You have to add a name and photo link"
-                    )
-                }
+            $.post(currentURL + "/api/friends", newChessmasters)
+            .then(function (data) {
 
-            })
+                // remember to get rid of this alert at some point!
+                alert("adding new Chess Master");
+
+                    // And we can clear, even though an image will be popping up. 
+                    $("#name").val("");
+                    $("#link").val("");
+                    $("#ques1").val("");
+                    $("#ques2").val("");
+                    $("#ques3").val("");
+                    $("#ques4").val("");
+                    $("#ques5").val("");
+                    $("#ques6").val("");
+                    $("#ques7").val("");
+                    $("#ques8").val("");
+                    $("#ques9").val("");
+                    $("#ques10").val("");
+                })
         });
     </script>
 </body>

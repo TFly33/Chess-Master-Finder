@@ -13,7 +13,6 @@ module.exports = function (app) {
     });
     // ^Tested on Postman^ and it is working. 
 
-    
     // Catch all route that leads to home.html
 
     app.get("*", function (req, res) {
@@ -23,3 +22,5 @@ module.exports = function (app) {
     // Tested on Postman^ and it is working. 
 
 };
+
+// should I add a friends page?
