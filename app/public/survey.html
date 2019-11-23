@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <!-- Now some JS LINKS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -21,14 +22,18 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- My own style sheet -->
-    <link rel="stylesheet" href="CSS/style2.css">
+        <!-- FA Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        type="text/css">
+
+        <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
     <div class="surveyQuestions text-center">
 
-        <h1> Survey Questions</h1>
+            <h1 class="container chessTrivia text-center border text-white bg-secondary"> <i class="fas fa-chess-queen"></i>
+                 Survey <i class="fas fa-chess-queen"></i></h1>
 
     </div>
 
@@ -186,7 +191,7 @@
         </form>
 
         <!-- Adding a "Done" Button -->
-        <a class="btn btn-primary btn-lg" id="submit-btn" role="button" href="#" data-toggle="modal"
+        <a class="btn btn-success btn-lg" id="submit-btn" role="button" href="#" data-toggle="modal"
             data-target="#nearestMatch">Find my Chessmaster!</a>
     </div>
 
@@ -204,12 +209,22 @@
                 </div>
 
                 <div class="modal-body nearestMatch text-center">
-                    
+
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-dismiss="modal" id="close-btn">Close</button>
                 </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- FOOTER HERE -->
+    <div class="container">
+        <div class="row">
+            <div class="col 10">
+                <a href="../api/friends" class="text-dark"> API Friends List</a> | <a
+                    href="https://github.com/TFly33/Chess-Master-Finder" class="text-dark"> Github Repository </a>
             </div>
         </div>
     </div>
