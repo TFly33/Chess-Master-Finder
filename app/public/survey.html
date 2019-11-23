@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Boostrap CSS HERE  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        type="text/css">
+
+    <!-- Now some JS LINKS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- My own style sheet -->
     <link rel="stylesheet" href="CSS/style2.css">
 </head>
 
@@ -176,18 +186,39 @@
         </form>
 
         <!-- Adding a "Done" Button -->
-        <div class="container text-center">
-            <button type="button" class="btn doneButton btn-lg btn-success"> Done!
-            </button>
+        <a class="btn btn-primary btn-lg" id="submit-btn" role="button" href="#" data-toggle="modal"
+            data-target="#nearestMatch">Find my Chessmaster!</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="nearestMatch" tabindex="-1" role="dialog" aria-labelledby="friendmatch"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">You approach chess like:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body nearestMatch text-center">
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="close-btn">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container text-center">
-        <div class="resultsDiv"> </div>
-    </div>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script type="text/javascript">
 
-        $("Button").on("click", function (event) {
+        $("#submit-btn").on("click", function (event) {
             event.preventDefault();
 
             // NEED TO GRAB THE USER INPUT
@@ -211,33 +242,36 @@
             console.log(newChessmasters.scores[1]);
             console.log(newChessmasters.scores[9]);
 
-            var currentURL = window.location.origin;
-
-            $.post(currentURL + "/api/friends", newChessmasters)
+            $.post("/api/friends", newChessmasters)
                 .then(function (data) {
-                    if (data) {
-                        // remember to get rid of this alert at some point!
-                        alert("adding new Chess Master");
+                    console.log("data = ?");
+                    console.log(data);
 
-                        // And we can clear, even though an image will be popping up. 
-                        $("#name").val("");
-                        $("#link").val("");
-                        $("#ques1").val("");
-                        $("#ques2").val("");
-                        $("#ques3").val("");
-                        $("#ques4").val("");
-                        $("#ques5").val("");
-                        $("#ques6").val("");
-                        $("#ques7").val("");
-                        $("#ques8").val("");
-                        $("#ques9").val("");
-                        $("#ques10").val("");
-                    }
-                    else {
-                        console.log("There's been an error")
-                    }
-            });
+                    var nearestMatch = data;
+                    console.log(nearestMatch);
+                    console.log("nearestMatch.name = " + nearestMatch.name);
+
+                    $(".nearestMatch").empty();
+                    $(".nearestMatch").append("<div><h5>" + nearestMatch.name + "</h2></div><div><img src=\"" + nearestMatch.photo + "\" class=\"img-fluid\"></div>");
+
+
+                    // And we can clear, even though an image will be popping up. 
+                    // $("#name").val("");
+                    // $("#link").val("");
+                    // $("#ques1").val("");
+                    // $("#ques2").val("");
+                    // $("#ques3").val("");
+                    // $("#ques4").val("");
+                    // $("#ques5").val("");
+                    // $("#ques6").val("");
+                    // $("#ques7").val("");
+                    // $("#ques8").val("");
+                    // $("#ques9").val("");
+                    // $("#ques10").val("");
+
+                });
 
         });
+
     </script>
 </body>

@@ -50,7 +50,7 @@ var Chessmasters = [
         ]
     },
     {
-        name: "Mikhail Tal",
+        name: "Paul Morphy",
         photo: "https://upload.wikimedia.org/wikipedia/commons/2/2e/PaulmorphyHair.jpg",
         scores: [
             1,
